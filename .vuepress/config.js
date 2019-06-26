@@ -1,7 +1,7 @@
 module.exports = {
     title: 'Vue simple Grid System',
     dest: 'docs',
-    // base: "/<REPO>/",
+    base: "/vue-grid/",
     themeConfig: {
         nav: [
             { text: 'Home', link: '/' },
