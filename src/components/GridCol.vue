@@ -18,31 +18,11 @@ values.forEach(value => {
 
 export default {
   props: {
-    /**
-     *  Кол-во колонок (всего 12)
-     */
     span: { type: Number },
-
-    /**
-     *  Очерёдность
-     */
     order: { type: Number },
-
-    /**
-     *  Отступ (margin-left)
-     */
     offset: { type: Number },
-
-    /**
-     *  Отступ (left)
-     */
     push: { type: Number },
-
-    /**
-     *  Отступ (right)
-     */
     pull: { type: Number },
-
     ...props
   },
 

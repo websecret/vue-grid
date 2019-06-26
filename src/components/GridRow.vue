@@ -7,23 +7,12 @@
 <script>
 export default {
   props: {
-    /**
-     *  Расстояние между колонками по горизонтали
-     */
     gutterX: {
       type: Number
     },
-
-    /**
-     *  Расстояние между колонками по вертикали
-     */
     gutterY: {
       type: Number
     },
-
-    /**
-     *  Выравнивание по горизонтали
-     */
     justify: {
       type: String,
       default: "left",
@@ -33,10 +22,6 @@ export default {
         );
       }
     },
-
-    /**
-     *  Выравнивание по вертикали
-     */
     align: {
       type: String,
       default: "top",
@@ -44,10 +29,6 @@ export default {
         return ["top", "middle", "bottom"].indexOf(value) !== -1;
       }
     },
-
-    /**
-     *  Автоматически тянущиеся колонки
-     */
     stretch: {
       type: Boolean,
       default: false
