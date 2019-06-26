@@ -1,0 +1,99 @@
+$cols: 12;
+
+$media-query-s: (min-width: 480px);
+$media-query-m: (min-width: 768px);
+$media-query-l: (min-width: 1024px);
+$media-query-xl: (min-width: 1200px);
+$media-query-xxl: (min-width: 1440px);
+
+@mixin generate-col($viewport: "") {
+  @for $i from 1 through $cols {
+    &--span#{$viewport}-#{$i} {
+      flex: 0 0 percentage($i / $cols);
+      max-width: percentage($i / $cols);
+    }
+
+    &--push#{$viewport}-#{$i} {
+      left: percentage($i / $cols);
+    }
+
+    &--pull#{$viewport}-#{$i} {
+      right: percentage($i / $cols);
+    }
+
+    &--offset#{$viewport}-#{$i} {
+      margin-left: percentage($i / $cols);
+    }
+
+    &--order#{$viewport}-#{$i} {
+      order: #{$i};
+    }
+  }
+}
+
+.v-grid-row {
+  $block-name: &;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  @each $key, $value in (
+          "left": "flex-start",
+          "right": "flex-end",
+          "center": "center",
+          "around": "space-around",
+          "between": "space-between"
+  ) {
+    &.v-grid-row--justify-#{$key} {
+      justify-content: #{$value};
+    }
+  }
+  @each $key, $value in (
+          "top": "flex-start",
+          "middle": "center",
+          "bottom":
+          "flex-end"
+  ) {
+    &.v-grid-row--align-#{$key} {
+      align-items: #{$value};
+    }
+  }
+
+  &--stretch {
+    > .v-grid-col {
+      flex: 1;
+    }
+  }
+}
+
+
+.v-grid-col {
+  $block-name: &;
+
+  display: block;
+  position: relative;
+  max-width: 100%;
+
+  @include generate-col("");
+
+  @media #{$media-query-s} {
+    @include generate-col("-s");
+  }
+
+  @media #{$media-query-m} {
+    @include generate-col("-m");
+  }
+
+  @media #{$media-query-l} {
+    @include generate-col("-l");
+  }
+
+  @media #{$media-query-xl} {
+    @include generate-col("-xl");
+  }
+
+  @media #{$media-query-xxl} {
+    @include generate-col("-xxl");
+  }
+}
