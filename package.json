@@ -10,7 +10,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn run lint && yarn run build && yarn run build:docs"
+      "pre-commit": "yarn run lint && yarn run build && yarn run docs:build"
     }
   },
   "dependencies": {
