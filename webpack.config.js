@@ -30,5 +30,5 @@ module.exports = {
 
   context: __dirname,
 
-  entry: ["./lib/assets/styles.scss"],
+  entry: ["./lib/assets/styles.scss"]
 };

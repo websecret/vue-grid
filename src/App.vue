@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h2>1</h2>
+    <h2>Simple</h2>
     <GridRow :gutter-x="15">
       <GridCol :span="1">
         <div style="background-color: #ff9ff3">1</div>
@@ -39,7 +39,37 @@
         <div style="background-color: #ff9ff3">1</div>
       </GridCol>
     </GridRow>
-    <h2>2</h2>
+    <h2>Row Reverse</h2>
+    <GridRow :gutter-x="15" :reverse="true">
+      <GridCol :span="3">
+        <div style="background-color: #ff9ff3">1</div>
+      </GridCol>
+      <GridCol :span="3">
+        <div style="background-color: #feca57">2</div>
+      </GridCol>
+      <GridCol :span="3">
+        <div style="background-color: #ff6b6b">3</div>
+      </GridCol>
+      <GridCol :span="3">
+        <div style="background-color: #48dbfb">4</div>
+      </GridCol>
+    </GridRow>
+    <h2>Col</h2>
+    <GridRow :gutter-x="15" direction="column" style="width: 300px; height: 200px">
+      <GridCol :span="3">
+        <div style="background-color: #ff9ff3">1</div>
+      </GridCol>
+      <GridCol :span="3">
+        <div style="background-color: #feca57">2</div>
+      </GridCol>
+      <GridCol :span="3">
+        <div style="background-color: #ff6b6b">3</div>
+      </GridCol>
+      <GridCol :span="3">
+        <div style="background-color: #48dbfb">4</div>
+      </GridCol>
+    </GridRow>
+    <h2>Offset</h2>
     <GridRow :gutter-x="15">
       <GridCol :span="3">
         <div style="background-color: #ff9ff3">3</div>
@@ -47,8 +77,11 @@
       <GridCol :span="3" :offset="3">
         <div style="background-color: #feca57">3 offset-3</div>
       </GridCol>
+      <GridCol :span="3">
+        <div style="background-color: #ff6b6b">3</div>
+      </GridCol>
     </GridRow>
-    <h2>3</h2>
+    <h2>Pull</h2>
     <GridRow :gutter-x="15">
       <GridCol :span="3">
         <div style="background-color: #ff9ff3">3</div>
@@ -56,8 +89,11 @@
       <GridCol :span="3" :pull="1">
         <div style="background-color: #feca57">3 pull-1</div>
       </GridCol>
+      <GridCol :span="3">
+        <div style="background-color: #ff6b6b">3</div>
+      </GridCol>
     </GridRow>
-    <h2>4</h2>
+    <h2>Push</h2>
     <GridRow :gutter-x="15">
       <GridCol :span="3">
         <div style="background-color: #ff9ff3">3</div>
@@ -65,8 +101,11 @@
       <GridCol :span="3" :push="1">
         <div style="background-color: #feca57">3 push-1</div>
       </GridCol>
+      <GridCol :span="3">
+        <div style="background-color: #ff6b6b">3</div>
+      </GridCol>
     </GridRow>
-    <h2>5</h2>
+    <h2>Order</h2>
     <GridRow :gutter-x="15">
       <GridCol :span="3">
         <div style="background-color: #ff9ff3">3</div>
@@ -94,6 +133,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

@@ -30,6 +30,17 @@ export default {
         return ["top", "middle", "bottom"].indexOf(value) !== -1;
       }
     },
+    direction: {
+      type: String,
+      default: "row",
+      validator: function(value) {
+        return ["row", "column"].indexOf(value) !== -1;
+      }
+    },
+    reverse: {
+      type: Boolean,
+      default: false
+    },
     stretch: {
       type: Boolean,
       default: false
@@ -45,7 +56,10 @@ export default {
       return {
         [`v-grid-row--justify-${this.justify}`]: this.justify,
         [`v-grid-row--align-${this.align}`]: this.align,
-        ["v-grid-row--stretch"]: this.stretch
+        ["v-grid-row--stretch"]: this.stretch,
+        [`v-grid-row--direction-${this.direction}${
+          this.reverse ? "-reverse" : ""
+        }`]: true
       };
     },
 

@@ -39,6 +39,16 @@ $media-query-xxl: (min-width: 1440px);
   flex-direction: row;
   flex-wrap: wrap;
 
+  @each $value in (
+          "row",
+          "column",
+          "row-reverse",
+          "column-reverse",
+  ) {
+    &.v-grid-row--direction-#{$value} {
+      flex-direction: #{$value};
+    }
+  }
   @each $key, $value in (
           "left": "flex-start",
           "right": "flex-end",
