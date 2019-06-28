@@ -34,6 +34,7 @@ $media-query-xxl: (min-width: 1440px);
 .v-grid-row {
   $block-name: &;
 
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -71,6 +72,7 @@ $media-query-xxl: (min-width: 1440px);
 .v-grid-col {
   $block-name: &;
 
+  box-sizing: border-box;
   display: block;
   position: relative;
   max-width: 100%;

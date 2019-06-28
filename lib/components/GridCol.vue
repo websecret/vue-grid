@@ -6,6 +6,7 @@
 
 <script>
 import _upperFirst from "lodash/upperFirst";
+
 const values = ["span", "order", "offset", "push", "pull"];
 const sizes = ["s", "m", "l", "xl", "xxl"];
 const props = {};
@@ -17,6 +18,8 @@ values.forEach(value => {
 });
 
 export default {
+  name: "GridCol",
+
   props: {
     span: { type: Number },
     order: { type: Number },
@@ -64,7 +67,9 @@ export default {
   },
 
   mounted() {
-    this.$parent.updateGutter();
+    if (this.$parent.$options.name === "GridRow") {
+      this.$parent.updateGutter();
+    }
   }
 };
 </script>

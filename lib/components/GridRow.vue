@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: "GridRow",
   props: {
     gutterX: {
       type: Number
@@ -76,7 +77,7 @@ export default {
     updateGutter() {
       this.$children.forEach(children => {
         let componentName = children.$options.name;
-        if (componentName === "McGridCol") {
+        if (componentName === "GridCol") {
           children.gutterX = this.gutterX;
           children.gutterY = this.gutterY;
         }
